@@ -145,7 +145,8 @@ h3 {
   text-align: center;
   border: #151717 2px solid;
   /* background: linear-gradient(to right, #7F7FD5, #91EAE4); */
-  background: linear-gradient(to right, #8987bf, #DEE7F8);
+  /* background: linear-gradient(to right, #8987bf, #DEE7F8); */
+  background-color: rgba(58, 117, 166, 0.7) !important;
   border-radius: 25px;
 
 

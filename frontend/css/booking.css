@@ -41,26 +41,15 @@ body {
 }
 
 .container-fluid-1 {
+  filter: brightness(70%);
+  background-image: url(/images/airplane-img.jpg);
   padding: 2% 0%;
   height: 130vh;
   width: 100%;
-  background-color: #DEE7F8;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-}
-
-.videopln{
-  /* opacity: 0.7; */
-
-  border-radius: 25px;
-  overflow: hidden;
-}
-
-.main-video{
-  background: linear-gradient(to left, transparent, rgba(255, 255, 255, 1));
-  padding-right: 150px;
 }
 
 
@@ -69,8 +58,10 @@ body {
   padding: 6.5% 4% !important;
   justify-content: flex-end;
   border-radius: 25px;
-  background-color: #8987bf !important;
-  max-width: 700px !important;
+  
+  /* background-color: rgba(58, 117, 166, 0.7) !important; */
+  background-color: rgba(151, 181, 208, 0.7) !important;
+  max-width: 50% !important;
   margin: 0 auto;
 }
 .contact-nums{
@@ -93,7 +84,7 @@ body {
 }
 
 label {
-  color: #fff7f7 !important;
+  color: #ffffff !important;
   display: block;
   font-weight: bold;
 }
@@ -123,7 +114,7 @@ select {
 }
 
 .terms-label a {
-  color: #000000;
+  color: #555555;
   text-decoration: none;
   margin-left: 1px;
 }
@@ -159,10 +150,10 @@ select {
 }
 
 .booking-section {
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f7f7f7;
+  background-color: #fff;
   font-family: Arial, sans-serif;
 }
 
@@ -198,6 +189,7 @@ input[type="email"],
 input[type="tel"],
 select {
   width: 100%;
+  color: white;
   padding: 10px;
   font-size: 14px;
   border: 1px solid #ccc;
@@ -302,3 +294,5 @@ select {
  .cta:active {
   transform: scale(0.95);
  }
+
+
