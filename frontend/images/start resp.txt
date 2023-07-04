@@ -1,0 +1,132 @@
+/*                                            HOME PAGE MOBILE VERSION                                                         */
+
+
+@media only screen and (max-width: 767px) {
+  .header {
+    padding: 1rem 0;
+  }
+
+  .container-fluid-1 {
+    padding: 1% 15%;
+    height: 100vh;
+    width: 100%;
+    background-image: url(../images/sky1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+
+  .navbar {
+    padding: 0 0 6rem;
+  }
+  .navbar-brand {
+    font-family: var(--primary-font);
+    font-size: 4rem;
+    font-weight: bold;
+    color: #f3fbfb;
+  }
+  h3 {
+    color: white;
+    font-size: 4rem;
+  }
+
+  .header .navbar-toggler {
+    font-size: 2rem;
+  }
+
+  .header .navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .header .navbar-nav .nav-link {
+    font-family: var(--secondary-font);
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0.5rem 3rem;
+    margin: 0 0.2rem;
+    transition: 0.3s;
+    color: aliceblue;
+  }
+
+  .header .navbar-nav .nav-item:hover > .nav-link {
+    transform: scale(1.2);
+    color: aqua;
+  }
+
+  /* #title{
+    background-color: #F3FBFB;
+} */
+
+  .main-img {
+    position: relative;
+    width: 120%;
+    top: 60%;
+    right: 15%;
+    opacity: 0.7;
+  }
+
+  .tagline {
+    margin-top: 22%;
+  }
+  .titletxt {
+    /* color: #00467f; */
+    color: aliceblue;
+    padding-right: 18%;
+    padding-bottom: 4%;
+    font-family: var(--secondary-font);
+    font-weight: 600;
+    font-size: 4rem;
+  }
+
+  .titletxt .areality {
+    color: #00ac9d;
+  }
+
+
+
+  .search-bar {
+    margin: auto;
+    background-color: #00a8a8;
+    margin-top: 10%;
+    padding: 20px;
+    border-radius: 8%;
+    width: 20%;
+  }
+  
+  .search-bar label {
+    color: white;
+    font-size: 100%;
+  }
+  
+  .search-bar input,
+  .search-bar select {
+    color: white;
+    font-size: 1.5rem;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid ;
+    border-radius: 0;
+    padding: 5px 0;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  
+  .search-bar input::placeholder,
+  .search-bar select::placeholder {
+    padding: 3% ;
+    color: rgb(0, 0, 0);
+    opacity: 0.6;
+  }
+  
+  .search-bar .btn-primary {
+    font-size: 100%;
+    padding: 10px 30px;
+  }
+  
+  
+  
+
+}

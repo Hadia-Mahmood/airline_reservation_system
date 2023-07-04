@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyMate</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+  <!-- Bootstrap5 cdn -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+  <!-- Font Awesome -->
+  <scrip src="https://kit.fontawesome.com/ab0ab137d9.js" crossorigin="anonymous">
+    </script>
+
+    <!-- Css StyleSheets -->
+    <link rel="stylesheet" href="css/booking.css">
+</head>
+
+<body class="booking">
+  <!-- HTML CODE -->
+  <!-- Navbar Code -->
+  <section id="title">
+
+    <div class="header container-fluid container-fluid-1">
+      <div class="headtitle">
+        <h2>Flight <span style="color: #aeabff;">Booking</span> </h2>
+      </div>
+      <hr style="margin: 3% auto; width: 30%; text-align: center; border: 2px solid black;">
+      <!-- Banner section -->
+      <div class="row">
+        <div class="col-lg-6 videopln">
+          <video style="width: 120%; border-radius: 25px;" src="images/jahaz.mp4" class="main-video" autoplay loop
+            muted></video>
+        </div>
+        <div class="col-lg-6 container-fluid">
+          <!-- HTML Markup -->
+          <div class="booking-section">
+            <form id="booking-form" action="process_booking.php" method="POST">
+              <div class="contact-nums">
+                <div class="form-group">
+                  <label for="passenger-name">Passenger Name</label>
+                  <input type="text" id="passenger-name" name="passenger-name" required style="width: 300px;">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" required style="width: 300px;">
+                </div>
+              </div>
+
+              <!-- CONTACT NUMBERS -->
+              <div class="contact-nums">
+                <div class="form-group">
+                  <label for="contact-number">Contact Number</label>
+                  <input type="tel" id="contact-number" name="contact-number" required style="width: 300px;">
+                </div>
+                <div class="form-group">
+                  <label for="second-contact-number">Second Contact Number</label>
+                  <input type="tel" id="second-contact-number" name="second-contact-number" style="width: 300px;">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="meal">Select Meal</label>
+                <select id="meal" name="meal" required>
+                  <option value="">-- Select Meal --</option>
+                  <!-- Options loaded from the database via backend -->
+                  <option value="meal1">Meal 1</option>
+                  <option value="meal2">Meal 2</option>
+                  <option value="meal3">Meal 3</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="terms">Terms and Conditions</label>
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms" class="terms-label">I agree to the <a class="termsand" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop">
+                    terms and conditions
+                  </a></label>
+              </div>
+              <div class="contact-nums">
+                <div class="form-group">
+                  <label for="card-number">Card Number</label>
+                  <input type="text" id="card-number" name="card-number" required>
+                </div>
+                <div class="form-group">
+                  <label for="expiry-date">Card Expiry Date</label>
+                  <input type="text" id="expiry-date" name="expiry-date" required>
+                </div>
+                <div class="form-group">
+                  <label for="card-name">Full Name on Card</label>
+                  <input type="text" id="card-name" name="card-name" required>
+                </div>
+              </div>
+              <div style="margin: auto; text-align: center;">
+
+
+                <button class="cta">
+                  <span>Hover me</span>
+                  <svg viewBox="0 0 13 10" height="10px" width="15px">
+                    <path d="M1,5 L11,5"></path>
+                    <polyline points="8 1 12 5 8 9"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+      <hr style="margin: 3% auto; width: 30%; text-align: center; border: 2px solid black;">
+  </section>
+
+  <!-- Bootstrap Modal for Terms and Conditions -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="terms-text">
+            <p>1. Booking and Reservations:</p>
+            <p>All flight bookings made through our airline website are subject to availability. The passenger is
+              responsible for providing accurate and complete information during the booking process. It is the
+              passenger's responsibility to review and confirm the booking details, including flight dates, times, and
+              destinations.</p>
+
+            <p>2. Ticketing and Payment:</p>
+            <p>All ticket prices and fares displayed on our website are subject to change without prior notice. Payment
+              for the flight booking must be made in full at the time of reservation, unless stated otherwise. We accept
+              various payment methods, and the passenger must provide valid and authorized payment information.</p>
+
+            <p>3. Flight Changes and Cancellations:</p>
+            <p>Flight changes and cancellations are subject to the airline's policies and fees, as well as any
+              applicable fare rules. The passenger must contact our customer service or follow the specified process for
+              making changes or cancellations. Some tickets may be non-refundable, and cancellation fees may apply. It
+              is advised to review the fare rules and cancellation policy before making any changes.</p>
+
+            <p>4. Check-In and Boarding:</p>
+            <p>Passengers must arrive at the airport within the specified time frame for check-in and boarding. It is
+              the passenger's responsibility to carry the necessary travel documents, including valid identification and
+              travel visas. Failure to comply with the check-in and boarding requirements may result in denied boarding
+              or additional fees.</p>
+
+            <p>5. Baggage:</p>
+            <p>Each passenger is allowed to carry a specific amount of baggage, as per the airline's baggage policy.
+              Additional fees may apply for excess baggage, oversized items, or special items such as sports equipment.
+              Passengers should ensure that their baggage meets the airline's requirements for weight, size, and
+              contents.</p>
+
+            <p>6. Flight Delays and Cancellations:</p>
+            <p>Flight schedules are subject to change, and delays or cancellations may occur due to various reasons,
+              including weather conditions, operational issues, or force majeure events. Our airline will make
+              reasonable efforts to notify passengers of any schedule changes or disruptions and provide alternative
+              options, if available.</p>
+
+            <p>7. Passenger Conduct and Safety:</p>
+            <p>Passengers must comply with all applicable laws, regulations, and security procedures during their
+              journey. Any disruptive, unruly, or illegal behavior may result in denied boarding, removal from the
+              aircraft, or legal action. Passengers must follow the safety instructions provided by the cabin crew and
+              ensure the safety of themselves and others on board.</p>
+
+            <p>8. Privacy and Data Protection:</p>
+            <p>Our airline respects passenger privacy and handles personal information in accordance with applicable
+              data protection laws and regulations. Passenger data collected during the booking process is used for the
+              purpose of providing the requested services and may be shared with relevant third parties, such as
+              government authorities or service providers.</p>
+
+            <p>9. Limitation of Liability:</p>
+            <p>Our airline will not be held liable for any direct, indirect, incidental, or consequential damages
+              arising from flight bookings, cancellations, delays, or any other services provided. Passengers are
+              advised to obtain appropriate travel insurance to cover any unforeseen events or losses.</p>
+
+            <p>10. Governing Law and Jurisdiction:</p>
+            <p>These terms and conditions are governed by and construed in accordance with the laws of [Country/Region].
+              Any disputes or claims arising out of or relating to these terms and conditions shall be subject to the
+              exclusive jurisdiction of the courts of [Country/Region].</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Bootstrap5 script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+
+  <!-- CUSTOME JS -->
+  <script src="js/index.js"></script>
+</body>
+
+</html>

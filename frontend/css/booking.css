@@ -1,0 +1,304 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  outline: none;
+}
+
+:root {
+  --primary-font: "Lato", sans-serif;
+  --secondary-font: "Montserrat", sans-serif;
+}
+
+html,
+body {
+  font-size: 10px;
+  font-family: var(--primary-font);
+  scroll-behavior: smooth;
+  line-height: 1.5;
+}
+
+/* Main css starts here */
+
+.headtitle{
+ text-align: center;
+}
+
+.headtitle h2{
+  font-size: 4rem;
+  font-family: var(--secondary-font);
+}
+
+.header {
+  padding: 1rem 0;
+}
+
+.container-fluid-1 {
+  padding: 2% 0%;
+  height: 130vh;
+  width: 100%;
+  background-color: #DEE7F8;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.videopln{
+  /* opacity: 0.7; */
+
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.main-video{
+  background: linear-gradient(to left, transparent, rgba(255, 255, 255, 1));
+  padding-right: 150px;
+}
+
+
+.booking-section {
+  /* margin-top: 5% !important; */
+  padding: 6.5% 4% !important;
+  justify-content: flex-end;
+  border-radius: 25px;
+  background-color: #8987bf !important;
+  max-width: 700px !important;
+  margin: 0 auto;
+}
+.contact-nums{
+  display: flex;
+
+}
+
+.contact-nums :nth-child(3){
+  padding-left: 8%;
+}
+
+.contact-nums :nth-child(2){
+  padding-left: 8%;
+}
+
+
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  color: #fff7f7 !important;
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+  background-color: #05060f0a;
+  border-radius: 2rem !important;
+  padding: 0 1rem;
+  border: 2px solid transparent;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.terms-label {
+  display: inline !important;
+  position: relative;
+  cursor: pointer;
+}
+#terms {
+  transform: scale(1.6);
+  margin-right: 8px; 
+  margin-top: 12px;
+}
+
+.terms-label a {
+  color: #000000;
+  text-decoration: none;
+  margin-left: 1px;
+}
+
+.terms-label a:hover {
+  text-decoration: underline;
+}
+
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkmark:after {
+  left: 5px;
+  top: 1px;
+  width: 4px;
+  height: 8px;
+  border: solid #007bff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkmark input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.modal-body {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.booking-section {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  font-family: Arial, sans-serif;
+}
+
+.booking-section h2 {
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="tel"],
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("dropdown-icon.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+  padding-right: 30px;
+}
+
+.terms-label {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+  display: flex;
+  align-items: center;
+}
+
+
+
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.modal-body {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+}
+
+
+
+
+.cta {
+  text-align: center;
+  position: relative;
+  margin: auto;
+  padding: 12px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+ }
+ 
+ .cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #b1dae7;
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+ }
+ 
+ .cta span {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #234567;
+ }
+ 
+ .cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #234567;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+ }
+ 
+ .cta:hover:before {
+  width: 100%;
+  background: #b1dae7;
+ }
+ 
+ .cta:hover svg {
+  transform: translateX(0);
+ }
+ 
+ .cta:active {
+  transform: scale(0.95);
+ }

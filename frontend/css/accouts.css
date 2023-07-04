@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  outline: none;
+}
+
+:root {
+  --primary-font: "Lato", sans-serif;
+  --secondary-font: "Montserrat", sans-serif;
+}
+
+
+/* Main css starts here */
+
+/* Navbar */
+
+.header {
+  padding: 1rem 0;
+}
+
+.container-fluid-1 {
+  padding: 1% 15%;
+  height: 100vh;
+  width: 100%;
+  background-color: #081b29;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.navbar {
+  padding: 0 0 6rem;
+}
+.navbar-brand {
+  font-family: var(--primary-font);
+  font-size: 3rem;
+  font-weight: bold;
+  color: #f3fbfb;
+}
+h3 {
+  color: white;
+  font-size: 3rem;
+}
+
+.header .navbar-toggler {
+  font-size: 2rem;
+}
+
+.header .navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.header .navbar-nav .nav-link {
+  font-family: var(--secondary-font);
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem 3rem;
+  margin: 0 0.2rem;
+  transition: 0.3s;
+  color: aliceblue;
+}
+
+.header .navbar-nav .nav-item:hover .nav-link,
+.header .navbar-nav .nav-item .active {
+  transform: scale(1.2);
+  color: aqua;
+}
+
+#account-form{
+  padding-top: 5%;
+    margin: auto;
+}
+
+
+.form {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  max-width: 50%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.title {
+  font-size: 28px;
+  color: royalblue;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 30px;
+}
+
+.title::before,.title::after {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 0px;
+  background-color: royalblue;
+}
+
+.title::before {
+  width: 18px;
+  height: 18px;
+  background-color: royalblue;
+}
+
+.title::after {
+  width: 18px;
+  height: 18px;
+  -webkit-animation: pulse 1s linear infinite;
+          animation: pulse 1s linear infinite;
+}
+
+.message, .signin {
+  color: rgba(88, 87, 87, 0.822);
+  font-size: 14px;
+}
+
+.signin {
+  text-align: center;
+}
+
+.signin a {
+  color: royalblue;
+}
+
+.signin a:hover {
+  -webkit-text-decoration: underline royalblue;
+          text-decoration: underline royalblue;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  gap: 6px;
+}
+
+.form label {
+  position: relative;
+}
+
+.form label .input {
+  width: 100%;
+  padding: 10px 10px 20px 10px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+}
+
+.form label .input + span {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  color: grey;
+  font-size: 0.9em;
+  cursor: text;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.form label .input:-moz-placeholder-shown + span {
+  top: 15px;
+  font-size: 0.9em;
+}
+
+.form label .input:-ms-input-placeholder + span {
+  top: 15px;
+  font-size: 0.9em;
+}
+
+.form label .input:placeholder-shown + span {
+  top: 15px;
+  font-size: 0.9em;
+}
+
+.form label .input:focus + span,.form label .input:valid + span {
+  top: 30px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.form label .input:valid + span {
+  color: green;
+}
+
+.submit {
+  border: none;
+  outline: none;
+  background-color: royalblue;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  -webkit-transform: .3s ease;
+      -ms-transform: .3s ease;
+          transform: .3s ease;
+}
+
+.submit:hover {
+  background-color: rgb(56, 90, 194);
+}
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: scale(1.8);
+            transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: scale(1.8);
+            transform: scale(1.8);
+    opacity: 0;
+  }
+}
+

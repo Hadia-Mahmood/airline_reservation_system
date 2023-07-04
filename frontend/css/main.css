@@ -1,0 +1,473 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  outline: none;
+}
+
+:root {
+  --primary-font: "Lato", sans-serif;
+  --secondary-font: "Montserrat", sans-serif;
+}
+
+html,
+body {
+  font-size: 10px;
+  font-family: var(--primary-font);
+  scroll-behavior: smooth;
+  line-height: 1.5;
+}
+
+/* Main css starts here */
+
+/* Navbar */
+
+.header {
+  padding: 1rem 0;
+}
+
+.container-fluid-1 {
+  padding: 1% 15%;
+  height: 100vh;
+  width: 100%;
+  background-image: url(../images/sky1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.navbar {
+  padding: 0 0 6rem;
+}
+.navbar-brand {
+  font-family: var(--primary-font);
+  font-size: 4rem;
+  font-weight: bold;
+  color: #f3fbfb;
+}
+h3 {
+  color: white;
+  font-size: 4rem;
+}
+
+.header .navbar-toggler {
+  font-size: 2rem;
+}
+
+.header .navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.header .navbar-nav .nav-link {
+  font-family: var(--secondary-font);
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0.5rem 3rem;
+  margin: 0 0.2rem;
+  transition: 0.3s;
+  color: aliceblue;
+}
+
+.header .navbar-nav .nav-item:hover .nav-link,
+.header .navbar-nav .nav-item .active {
+  transform: scale(1.2);
+  color: aqua;
+}
+
+.dropdown-menu{
+  padding: 8%;
+  background-color: #152238;
+}
+
+.dropdown-item{
+  text-align: center;
+    font-family: var(--secondary-font);
+    text-transform: uppercase;
+    color: #ecedec;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0.5rem 3rem;
+    padding-bottom: 2rem ;
+    transition: 0.5s;
+  }
+
+.dropdown-item:hover{
+  text-decoration: underline;
+}
+
+
+
+/* #title{
+    background-color: #F3FBFB;
+} */
+
+.main-img {
+  position: relative;
+  width: 140%;
+  top: 25%;
+  right: 20%;
+  opacity: 0.7;
+}
+
+.tagline {
+  margin-top: 22%;
+}
+.titletxt {
+  /* color: #00467f; */
+  color: aliceblue;
+  padding-right: 18%;
+  padding-bottom: 4%;
+  font-family: var(--secondary-font);
+  font-weight: 600;
+  font-size: 5rem;
+}
+
+.titletxt .areality {
+  color: #00ac9d;
+}
+
+
+#SEARCH_PORTION{
+  padding: 2.5%;
+  width: 50%;
+  margin: 5% auto;
+  margin-top: 1% !important;
+  text-align: center;
+  border: #151717 2px solid;
+  /* background: linear-gradient(to right, #7F7FD5, #91EAE4); */
+  background: linear-gradient(to right, #8987bf, #DEE7F8);
+  border-radius: 25px;
+
+
+}
+
+
+
+/* UI VErseCSS */
+
+.btn-submit {
+  width: 9em;
+  height: 3em;
+  border-radius: 30em;
+  font-size: 15px;
+  font-family: inherit;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 6px 6px 12px #c5c5c5,
+              -6px -6px 12px #ffffff;
+ }
+ 
+ .btn-submit::before {
+  content: '';
+  width: 0;
+  height: 3em;
+  border-radius: 30em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+ }
+ 
+ .btn-submit:hover::before {
+  width: 9em;
+ }
+.input {
+  
+  font-family: var(--primary-font);text-align: center;
+  color: #000;
+  font-size: 2.5rem;
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  padding-inline: 0.5em;
+  padding-block: 0.7em;
+  border: none;
+  border-bottom: var(--border-height) solid var(--border-before-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-border {
+  text-align: center;
+  position: absolute;
+  background: var(--border-after-color);
+  width: 0%;  
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input:focus + .input-border {
+  width: 100%;
+}
+
+.form-control {
+  text-align: center;
+  border: none;
+  position: relative;
+}
+
+.input-alt {
+  font-size: 1.7rem;
+  padding-inline: 1em;
+  font-family: var(--primary-font);
+  color: #152238;
+  background-color: #ecedec;
+  padding-block: 0.8em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-border-alt {
+  height: 3px;
+  background: linear-gradient(90deg, #FF6464 0%, #FFBF59 50%, #47C9FF 100%);
+  transition: width 0.4s cubic-bezier(0.42, 0, 0.58, 1.00);
+}
+
+.input-alt:focus + .input-border-alt {
+  width: 100%;
+}
+
+
+.textsearch{
+  margin: 0 auto;
+  margin-top: 3% !important;
+  text-align: center;
+}
+
+.textsearch h1{
+  font-family:var(--primary-font) ;
+  font-weight: bold;
+  font-size: 4rem;
+}
+
+/* UI VERSE CSS END */
+
+
+/* SIGN IN MODAL */
+
+#account-form{
+  margin: auto;
+}
+
+.form {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #ffffff;
+  padding: 30px;
+  width: 550px;
+  border-radius: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+::placeholder {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.form button {
+  align-self: flex-end;
+}
+
+.flex-column > label {
+  color: #151717;
+  font-weight: 600;
+}
+
+.inputForm {
+  border: 1.5px solid #ecedec;
+  border-radius: 10px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  transition: 0.2s ease-in-out;
+}
+
+.input-2 {
+  margin-left: 10px;
+  border-radius: 10px;
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+.input-2:focus {
+  outline: none;
+}
+
+.inputForm:focus-within {
+  border: 1.5px solid #2d79f3;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.flex-row > div > label {
+  font-size: 150%;
+  color: black;
+  font-weight: 400;
+}
+
+.span {
+  font-size: 14px;
+  margin-left: 5px;
+  color: #2d79f3;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.button-submit {
+  margin: 20px 0 10px 0;
+  background-color: #151717;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  font-weight: 500;
+  border-radius: 10px;
+  height: 50px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.p {
+  text-align: center;
+  color: black;
+  font-size: 1.5rem ;
+  margin: 5px 0;
+}
+
+.btn-1 {
+  margin-top: 10px;
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  gap: 10px;
+  border: 1px solid #ededef;
+  background-color: white;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.btn:hover {
+  border: 1px solid #2d79f3;
+  ;
+}
+
+
+.modal-content{
+  width: 140%;
+}
+
+.modal-content-1{
+  width: 120%;
+}
+
+
+.btn-2 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  gap: 10px;
+  border: 1px solid #ededef;
+  background-color: white;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.btn-2:hover {
+  border: 1px solid #2d79f3;
+  ;
+}
+
+
+
+
+.trending-flights {
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.trending-flights h2 {
+  text-align: center;
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.flight-card {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.flight-info {
+  margin-bottom: 10px;
+}
+
+.flight-id {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #555;
+}
+
+.from, .to, .date, .time {
+  display: block;
+  color: #777;
+  font-size: 2rem;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.discount-price {
+  font-weight: bold;
+  font-size: 3rem;
+  color: #27ae60;
+  margin-right: 10px;
+}
+
+.original-price {
+  font-size: 1.8rem;
+  color: #888;
+  text-decoration: line-through;
+}
