@@ -225,6 +225,55 @@ app.post('/logout', (req, res) => {
 });
 
 
+
+// admin page :   creating new flights ////////////////////////////
+
+app.post("/createFlight",function(req,res){
+    //getting data from form//
+    var flightID=req.body.flightID;
+    var source=req.body.source;
+    var Destination=req.body.Destination;
+    var Date=req.body.Date;
+    var AirplaneName=req.body.AirplaneName;
+    var Terminal=req.body.Terminal;
+    var Status=req.body.Status;
+    var Departure=req.body.Departure;
+    var Arrival=req.body.Arrival;
+    var flightClass=req.body.flightClass;
+    var TotalSeats=req.body.TotalSeats;
+    var Price=req.body.Price;
+    var Discount=req.body.Discount;
+    
+    console.log(flightID,source,Destination,Date,AirplaneName,Terminal,Status,Departure,Arrival,flightClass,TotalSeats,Price,Discount);
+
+    
+    var sql = "INSERT INTO flight VALUES('"+flightID+"','"+source+"','"+Destination+"','"+Date+"','"+Departure+"','"+Arrival+"','"+AirplaneName+"','"+Status+"','"+Terminal+"',(SELECT Admin_id FROM admin));INSERT INTO class VALUES('"+flightID+"','"+flightClass+"','"+TotalSeats+"','"+TotalSeats+"','"+Price+"','"+Discount+"')";
+    // 
+    // inserting form data into database //
+    connection.query(sql,function(error,results, fields){
+        if (error) {
+            console.log(error);
+            res.redirect('/register');
+        }
+        else{
+                res.redirect('/adminpage');
+                 
+                
+        }
+       
+    });
+        
+    });
+    
+
+    
+ 
+
+
+
+
+
+
 connection.connect(function(err){
     if(err)
          throw(err);
