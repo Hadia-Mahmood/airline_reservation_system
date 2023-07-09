@@ -19,6 +19,7 @@
 
 html,
 body {
+  overflow-x: hidden;
   font-size: 10px;
   font-family: var(--primary-font);
   scroll-behavior: smooth;
@@ -29,12 +30,8 @@ body {
 
 /* Navbar */
 
-.header {
-  padding: 1rem 0;
-}
-
 .container-fluid-1 {
-  padding: 1% 15%;
+  padding: 3% 9%;
   height: 100vh;
   width: 100%;
   background-image: url(../images/sky1.jpg);
@@ -42,10 +39,18 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  margin: 0;
 }
 
 .navbar {
-  padding: 0 0 6rem;
+  opacity: 0.8;
+  background-color: rgb(58, 117, 166) !important;
+  padding: 1rem 6rem;
+}
+
+.navbar-scrolled {
+  opacity: 1;
+  /* Other styles... */
 }
 .navbar-brand {
   font-family: var(--primary-font);
@@ -55,19 +60,19 @@ body {
 }
 h3 {
   color: white;
-  font-size: 4rem;
+  font-size: 6rem;
 }
 
-.header .navbar-toggler {
+#header .navbar-toggler {
   font-size: 2rem;
 }
 
-.header .navbar-toggler:focus {
+#header .navbar-toggler:focus {
   outline: none;
   box-shadow: none;
 }
 
-.header .navbar-nav .nav-link {
+#header .navbar-nav .nav-link {
   font-family: var(--secondary-font);
   text-transform: uppercase;
   font-size: 1.5rem;
@@ -78,34 +83,32 @@ h3 {
   color: aliceblue;
 }
 
-.header .navbar-nav .nav-item:hover .nav-link,
-.header .navbar-nav .nav-item .active {
+#header .navbar-nav .nav-item:hover .nav-link,
+#header .navbar-nav .nav-item .active {
   transform: scale(1.2);
   color: aqua;
 }
 
-.dropdown-menu{
+.dropdown-menu {
   padding: 8%;
   background-color: #152238;
 }
 
-.dropdown-item{
+.dropdown-item {
   text-align: center;
-    font-family: var(--secondary-font);
-    text-transform: uppercase;
-    color: #ecedec;
-    font-size: 1.5rem;
-    font-weight: 600;
-    padding: 0.5rem 3rem;
-    padding-bottom: 2rem ;
-    transition: 0.5s;
-  }
-
-.dropdown-item:hover{
-  text-decoration: underline;
+  font-family: var(--secondary-font);
+  text-transform: uppercase;
+  color: #ecedec;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0.5rem 3rem;
+  padding-bottom: 2rem;
+  transition: 0.5s;
 }
 
-
+.dropdown-item:hover {
+  text-decoration: underline;
+}
 
 /* #title{
     background-color: #F3FBFB;
@@ -120,39 +123,39 @@ h3 {
 }
 
 .tagline {
-  margin-top: 22%;
+  margin-top: 38%;
 }
 .titletxt {
   /* color: #00467f; */
   color: aliceblue;
-  padding-right: 18%;
-  padding-bottom: 4%;
+  padding-right: 12%;
+  padding-bottom: 2%;
   font-family: var(--secondary-font);
   font-weight: 600;
-  font-size: 5rem;
+  font-size: 5.4rem;
 }
 
 .titletxt .areality {
-  color: #00ac9d;
+  color: rgba(58, 117, 166, 0.7) !important;
 }
 
-
-#SEARCH_PORTION{
+#SEARCH_PORTION {
   padding: 2.5%;
   width: 50%;
   margin: 5% auto;
-  margin-top: 1% !important;
+  margin-top: 3% !important;
   text-align: center;
   border: #151717 2px solid;
   /* background: linear-gradient(to right, #7F7FD5, #91EAE4); */
   /* background: linear-gradient(to right, #8987bf, #DEE7F8); */
   background-color: rgba(58, 117, 166, 0.7) !important;
-  border-radius: 25px;
-
-
+  border-radius: 45px;
+  transition: 0.5s;
 }
 
-
+#SEARCH_PORTION:hover {
+  box-shadow: 0 3px 10px rgb(0 0 0 / 1);
+}
 
 /* UI VErseCSS */
 
@@ -166,12 +169,11 @@ h3 {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  box-shadow: 6px 6px 12px #c5c5c5,
-              -6px -6px 12px #ffffff;
- }
- 
- .btn-submit::before {
-  content: '';
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+}
+
+.btn-submit::before {
+  content: "";
   width: 0;
   height: 3em;
   border-radius: 30em;
@@ -179,17 +181,17 @@ h3 {
   top: 0;
   left: 0;
   background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
-  transition: .5s ease;
+  transition: 0.5s ease;
   display: block;
   z-index: -1;
- }
- 
- .btn-submit:hover::before {
+}
+
+.btn-submit:hover::before {
   width: 9em;
- }
+}
 .input {
-  
-  font-family: var(--primary-font);text-align: center;
+  font-family: var(--primary-font);
+  text-align: center;
   color: #000;
   font-size: 2.5rem;
   background-color: transparent;
@@ -206,7 +208,7 @@ h3 {
   text-align: center;
   position: absolute;
   background: var(--border-after-color);
-  width: 0%;  
+  width: 0%;
   height: 2px;
   bottom: 0;
   left: 0;
@@ -232,6 +234,7 @@ h3 {
   padding-inline: 1em;
   font-family: var(--primary-font);
   color: #152238;
+  border-radius: 25px;
   background-color: #ecedec;
   padding-block: 0.8em;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -239,33 +242,34 @@ h3 {
 
 .input-border-alt {
   height: 3px;
-  background: linear-gradient(90deg, #FF6464 0%, #FFBF59 50%, #47C9FF 100%);
-  transition: width 0.4s cubic-bezier(0.42, 0, 0.58, 1.00);
+  background: linear-gradient(90deg, #ff6464 0%, #ffbf59 50%, #47c9ff 100%);
+  transition: width 0.4s cubic-bezier(0.42, 0, 0.58, 1);
 }
 
 .input-alt:focus + .input-border-alt {
   width: 100%;
 }
 
-
-.textsearch{
+.textsearch {
   margin: 0 auto;
   margin-top: 3% !important;
   text-align: center;
+  /* width: fit-content;
+  background-color: rgba(58, 117, 166, 0.7) !important; */
 }
 
-.textsearch h1{
-  font-family:var(--primary-font) ;
+.textsearch h1 {
+  font-family: var(--primary-font);
   font-weight: bold;
+  color: rgba(58, 117, 166, 0.7) !important;
   font-size: 4rem;
 }
 
 /* UI VERSE CSS END */
 
-
 /* SIGN IN MODAL */
 
-#account-form{
+#account-form {
   margin: auto;
 }
 
@@ -278,11 +282,13 @@ h3 {
   padding: 30px;
   width: 550px;
   border-radius: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 ::placeholder {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .form button {
@@ -334,7 +340,6 @@ h3 {
   font-weight: 400;
 }
 
-
 .button-submit {
   margin: 20px 0 10px 0;
   background-color: #151717;
@@ -351,7 +356,7 @@ h3 {
 .p {
   text-align: center;
   color: black;
-  font-size: 1.5rem ;
+  font-size: 1.5rem;
   margin: 5px 0;
 }
 
@@ -373,18 +378,15 @@ h3 {
 
 .btn:hover {
   border: 1px solid #2d79f3;
-  ;
 }
 
-
-.modal-content{
+.modal-content {
   width: 140%;
 }
 
-.modal-content-1{
+.modal-content-1 {
   width: 120%;
 }
-
 
 .btn-2 {
   font-size: 1.5rem;
@@ -405,11 +407,7 @@ h3 {
 
 .btn-2:hover {
   border: 1px solid #2d79f3;
-  ;
 }
-
-
-
 
 .trending-flights {
   background-color: #f9f9f9;
@@ -441,7 +439,10 @@ h3 {
   color: #555;
 }
 
-.from, .to, .date, .time {
+.from,
+.to,
+.date,
+.time {
   display: block;
   color: #777;
   font-size: 2rem;
@@ -466,9 +467,15 @@ h3 {
   text-decoration: line-through;
 }
 
+.card {
+  transition: 0.5s;
+}
+.card:hover {
+  box-shadow: 0 3px 10px rgb(0 0 0 / 1);
+  transform: scale(1.1);
+}
 
-
-.list-group-item{
+.list-group-item {
   font-family: var(--secondary-font);
   color: white;
   font-size: 1.6rem;
@@ -476,22 +483,31 @@ h3 {
   border: none;
 }
 
-.list-group{
-  margin-top: 6%;
-  /* padding: 5%; */
+.list-group {
+  margin-top: 12%;
+  padding: 5%;
   background-color: rgba(58, 117, 166, 0.7) !important;
-  /* border-radius: 45px; */
 }
 
-.text-primary{
+.text-primary {
   font-size: 1.8rem;
   color: rgba(0, 78, 142, 1) !important;
 }
 
 .suggestion-box {
-  max-height: 300px; /* Set the maximum height for the suggestion box */
+  max-height: 253px; /* Set the maximum height for the suggestion box */
   overflow-y: auto;
 }
 
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(transparent, #adffff);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(transparent, #3a98b9);
+}
 
-
+/* ---------------------------------Footer----------------------------------------- */
