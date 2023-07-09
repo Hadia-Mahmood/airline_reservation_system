@@ -123,7 +123,7 @@
         <div class="col-4">
           <input id="autocomplete_search" class="input input-alt form-control form-control-lg" placeholder="✈ Source"
             required="" type="text">
-          <div id="search_result" class="suggestion-box" ></div>
+          <div id="search_result" class="suggestion-box"></div>
 
         </div>
         <div class="form-group col-4">
@@ -145,25 +145,39 @@
 
   <section id="trending-flights">
     <div class="trending-flights">
-      <h2>Trending Flights</h2>
-      <div class="flight-card">
-        <div class="flight-info">
-          <span class="flight-id">Flight ID: F123</span>
-          <span class="from">From: New York</span>
-          <span class="to">To: London</span>
-          <span class="date">Date: June 30, 2023</span>
-          <span class="time">Time: 10:00 AM</span>
-        </div>
-        <div class="price">
-          <span class="discount-price">$250</span>
-          <span class="original-price">$300</span>
-        </div>
-      </div>
-
-      <!-- Repeat the above flight-card div for other trending flights -->
+      <% for (let i=0; i < flights.length; i++) { %>
+        <% if (i % 3===0) { %>
+          <div class="row"  style="margin-top: 6%;">
+            <% } %>
+              <div class="col-lg-4">
+                <div class="card" style="width: 300px;">
+                  <img src="images/flights/<%= flights[i].destination %>.jpg" style="height: 30vh;" class="card-img-top" alt="Sample Image">
+                  <div class="card-body text-center">
+                    <span class="flight-id">Flight ID: <%= flights[i].flight_id %></span>
+                    <span class="to">To: <%= flights[i].destination %></span>
+                    <span class="date">Date: <%= flights[i].date %></span>
+                    <span class="time">Time: <%= flights[i].departure_time %></span>
+                    <a href="#" class="btn btn-primary btn-outline-dark">Book Now</a>
+                    <div class="price">
+                      <span class="discount-price">$<%= flights[i].discount %></span>
+                      <span class="original-price">$<%= flights[i].price %></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <% if ((i + 1) % 3===0 || i===flights.length - 1) { %>
+          </div>
+          <% } %>
+            <% } %>
     </div>
-
   </section>
+
+
+
+
+
+
+
 
 
 
@@ -196,7 +210,8 @@
                   </g>
                 </svg>
                 <!-- change start -->
-                <input style="font-size: 1.5rem;" name="email" placeholder="Enter your Email" class="input" type="text">
+                <input style="font-size: 1.5rem;" name="email" placeholder="Enter your Email" class="input-2"
+                  type="text">
                 <!-- change end  -->
               </div>
 
@@ -213,7 +228,7 @@
                   </path>
                 </svg>
                 <!-- change start -->
-                <input style="font-size: 1.5rem;" name="password" placeholder="Enter your Password" class="input"
+                <input style="font-size: 1.5rem;" name="password" placeholder="Enter your Password" class="input-2"
                   type="password">
                 <!-- change end -->
               </div>
@@ -270,7 +285,7 @@
                   </g>
                 </svg>
                 <!-- change start -->
-                <input style="font-size: 1.5rem;" id="useremail" placeholder="Enter your Email" class="input"
+                <input style="font-size: 1.5rem;" id="useremail" placeholder="Enter your Email" class="input-2"
                   name="email" type="text">
                 <!-- change end -->
               </div>
@@ -289,7 +304,7 @@
                 </svg>
                 <!-- change start -->
                 <input style="font-size: 1.5rem;" id="userpass" name="password" placeholder="Enter your Password"
-                  class="input" type="password">
+                  class="input-2" type="password">
 
                 <!-- change end -->
               </div>

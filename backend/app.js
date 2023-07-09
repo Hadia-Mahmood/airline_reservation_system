@@ -45,10 +45,6 @@ app.use(cookieParser());
 // ////////////////////////////////ROUTES///////////////////////////////////////////////////////
 
 
-app.get("/", function (req, res) {
-    res.render(viewPath)
-});
-
 
 app.get("/aboutus", function (req, res) {
     res.sendFile(staticPath + '/aboutus.html');
@@ -158,6 +154,28 @@ app.get('/get_data2', function (req, res) {
 
 module.exports = router;
 
+
+// Execute the query for trending flights
+app.get("/", function (req, res) {
+    connection.query(
+      `SELECT f.flight_id, f.destination, f.date, f.departure_time, c.price, c.discount
+       FROM flight AS f
+       JOIN class AS c ON f.flight_id = c.flight_id
+       WHERE c.discount > 0;`,
+      (error, results) => {
+        if (error) {
+          console.error('Error executing query:', error);
+          console.log(results);
+          res.render(viewPath, { flights: [] }); // Pass an empty array if an error occurs
+          return;
+        }
+        console.log("result")
+        console.log(results);
+        res.render(viewPath, { flights: results }); // Pass the results to the EJS template for rendering
+      }
+    );
+  });
+  
 
 //////////////////////////////////////// customer register///////////////////
 
