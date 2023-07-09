@@ -472,3 +472,33 @@ h3 {
   color: #888;
   text-decoration: line-through;
 }
+
+
+
+.list-group-item{
+  font-family: var(--secondary-font);
+  color: white;
+  font-size: 1.6rem;
+  background-color: transparent;
+  border: none;
+}
+
+.list-group{
+  margin-top: 6%;
+  /* padding: 5%; */
+  background-color: rgba(58, 117, 166, 0.7) !important;
+  /* border-radius: 45px; */
+}
+
+.text-primary{
+  font-size: 1.8rem;
+  color: rgba(0, 78, 142, 1) !important;
+}
+
+.suggestion-box {
+  max-height: 300px; /* Set the maximum height for the suggestion box */
+  overflow-y: auto;
+}
+
+
+
