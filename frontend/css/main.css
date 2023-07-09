@@ -304,7 +304,7 @@ h3 {
   transition: 0.2s ease-in-out;
 }
 
-.input-2 {
+.input {
   margin-left: 10px;
   border-radius: 10px;
   border: none;
@@ -312,7 +312,7 @@ h3 {
   height: 100%;
 }
 
-.input-2:focus {
+.input:focus {
   outline: none;
 }
 
@@ -334,13 +334,6 @@ h3 {
   font-weight: 400;
 }
 
-.span {
-  font-size: 14px;
-  margin-left: 5px;
-  color: #2d79f3;
-  font-weight: 500;
-  cursor: pointer;
-}
 
 .button-submit {
   margin: 20px 0 10px 0;
