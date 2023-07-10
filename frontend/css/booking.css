@@ -33,7 +33,7 @@ body {
 
 .headtitle h2{
   font-size: 4rem;
-  font-family: var(--secondary-font);
+  font-family: var(--secondary-font) !important;
 }
 
 .header {
@@ -41,7 +41,6 @@ body {
 }
 
 .container-fluid-1 {
-  filter: brightness(70%);
   background-image: url(/images/airplane-img.jpg);
   padding: 2% 0%;
   height: 130vh;
@@ -60,7 +59,7 @@ body {
   border-radius: 25px;
   
   /* background-color: rgba(58, 117, 166, 0.7) !important; */
-  background-color: rgba(151, 181, 208, 0.7) !important;
+  background-color: rgba(151, 181, 208, 0.8) !important;
   max-width: 50% !important;
   margin: 0 auto;
 }
@@ -95,7 +94,8 @@ input[type="tel"],
 select {
   background-color: #05060f0a;
   border-radius: 2rem !important;
-  padding: 0 1rem;
+  padding: 0 2rem;
+  color: #ffffff !important;
   border: 2px solid transparent;
   width: 100%;
   padding: 10px;
@@ -114,7 +114,7 @@ select {
 }
 
 .terms-label a {
-  color: #555555;
+  color: #000000;
   text-decoration: none;
   margin-left: 1px;
 }
@@ -173,7 +173,7 @@ label {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 5px;
-  color: #555;
+  color: #ffffff;
 }
 
 .input-group {
@@ -189,10 +189,10 @@ input[type="email"],
 input[type="tel"],
 select {
   width: 100%;
-  color: white;
+  color: rgba(255, 255, 255, 2);
   padding: 10px;
   font-size: 14px;
-  border: 1px solid #ccc;
+  border: 1px solid #ffffff;
   border-radius: 4px;
 }
 
@@ -209,7 +209,6 @@ select {
 .terms-label {
   font-size: 14px;
   line-height: 1.5;
-  color: #555;
   display: flex;
   align-items: center;
 }
@@ -296,3 +295,10 @@ select {
  }
 
 
+ option{
+  background-color: rgba(151, 181, 208, 0.8) !important;
+  font-size: 1.7rem;
+ }
+option:hover{
+  background-color: #000000 !important;
+}
