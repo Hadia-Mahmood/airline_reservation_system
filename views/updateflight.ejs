@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>DASHBOARD</title>
+    
+    
+</head>
+<body>
+    
+     <h3>UPDATE FLIGHT</h3>
+     <form action="" method="post">
+        <div class="form">
+             
+            
+            <input name="flight_id" value="<%= flights[0].flight_id %>"  type="hidden">
+
+
+            <label for="">Date </label>
+            <input name="Date" value="<%= flights[0].date %>" placeholder="mm/dd/yyyy" type="date" required>
+
+            <label for="">Airplane Name </label>
+           
+            
+            <select id="myDropdown">
+                <option value="PK-100">PK-100</option>
+                <option value="PK-101">PK-101</option>
+                <option value="PK-102">PK-102</option>
+                <option value="PK-103">PK-103</option>
+                <option value="PK-104">PK-104</option>
+                <option value="PK-105">PK-105</option>
+                <option value="PK-106">PK-106</option>
+
+                
+            </select>
+              
+            <input type="hidden" id="selectedValueInput" value="<%= flights[0].airplane_name %>"  name="AirplaneName" placeholder="AirplaneName" required readonly>
+
+
+            <label for="">Status </label>
+            <input name="status" type="text" value="<%= flights[0].status %>"  placeholder="status" required >
+
+            <label for="">Terminal </label>
+            <input name="Terminal"  placeholder="terminal" value="<%= flights[0].terminal %>" type="text"required>
+
+
+            <label for="">Departure Time </label>
+            <input name="Departure" type="time" value="<%= flights[0].departure_time %>"  placeholder="Departure time" required >
+
+            <label for="">Arrival Time </label>
+            <input name="Arrival"  type="time"  value="<%= flights[0].arrival_time %>" placeholder="Arrivaltime" required>
+
+            <H4>ENTER BUSINESS CLASS DETAILS</H4>
+
+            
+
+            <label for="">Price </label>
+            <input name="BPrice" placeholder="min 50000 max 400000" type="number" min="50000" max="400000"  value="<%= flights[0].price %>"  required>
+
+            <label for="">Discount </label>
+            <input name="BDiscount" placeholder="max 60" type="number"  max="60"  value="<%= flights[0].discount %>"  required>
+
+
+            <H4>ENTER ECONOMY CLASS DETAILS</H4>
+
+            
+
+            <label for="">Price </label>
+            <input name="EPrice" placeholder="min=50000 max=400000" type="number" min="50000" max="400000"  value="<%= flights[1].price %>"  required>
+
+            <label for="">Discount </label>
+            <input name="EDiscount" placeholder="max=60" type="number"  max="60"  value="<%= flights[1].discount %>"  required>
+              
+
+        </div>
+        <br>
+        <button name="submit" type="submit">UPDATE flight!</button>
+     </form>
+     <br>
+    <!-- ***************************************** -->
+    <script src="js/admin.js"></script>
+    <!-- ****************************************** -->
+</body>
+</html>

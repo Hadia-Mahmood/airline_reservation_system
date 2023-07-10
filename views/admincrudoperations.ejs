@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN CRUD</title>
+</head>
+<body>
+    <br>
+    <!-- DISPLAY ALL FLIGHTS  -->
+    <H1>FLIGHT LIST </H1>
+    <table border="1" width="100%">
+        <tr>
+            <th>FLIGHT ID</th>
+            <th>SOURCE</th>
+            <th>DESTINATION</th>
+            <th>DATE</th>
+            <th>DEPARTURE TIME</th>
+            <th>ARRIVAL TIME</th>
+            <th>AIRPLANE NAME </th>
+            <th>STATUS </th>
+            <th>TERMINAL</th>
+            <th>CLASS</th>
+            <th>TOTAL SEATS</th>
+            <th>SEATS LEFT</th>
+            <th>PRICE</th>
+            <th>DISCOUNT</th>
+            <th>DELETE</th>
+            <th>UPDATE</th>
+        </tr>
+        <% if (flights.length >0){%>
+            <% for(var i= 0;i<flights.length;i++){ %>
+            <tr>
+                <td><%- flights[i].flight_id %></td>
+                <td><%- flights[i].source %></td>
+                <td><%- flights[i].destination %></td>
+                <td><%- flights[i].date %></td>
+                <td><%- flights[i].departure_time %></td>
+                <td><%- flights[i].arrival_time %></td>
+                <td><%- flights[i].airplane_name %></td>
+                <td><%- flights[i].status %></td>
+                <td><%- flights[i].terminal %></td>
+                <td><%- flights[i].class %></td>
+                <td><%- flights[i].total_seats %></td>
+                <td><%- flights[i].seats_left %></td>
+                <td><%- flights[i].price %></td>
+                <td><%- flights[i].discount %></td>
+                <td> <a href="/delete-flight?id=<%- flights[i].flight_id %>">Delete</a> </td>
+                <td> <a href="/updateflight?id=<%- flights[i].flight_id %>">Update</a> </td>
+            </tr>
+            <% } %>
+
+            <% } else { %>
+                <h1>NO FLIGHTS AVAILABLE</h1>
+
+            <% } %>
+
+
+    </table>
+
+
+
+</body>
+</html>

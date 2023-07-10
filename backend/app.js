@@ -34,7 +34,8 @@ app.use(bodyParser.urlencoded({
 }));
 
 const staticPath = path.join(__dirname, "../frontend");
-const viewPath = path.join(__dirname, "../views/index");
+const viewPath = path.join(__dirname,"../views")
+
 
 
 // to store all our static files like css , images ,audios etc we will use public folder
@@ -46,35 +47,45 @@ app.use(cookieParser());
 
 
 
-app.get("/aboutus", function (req, res) {
+app.get("/aboutus",function(req,res){
+    // res.sendFile(staticPath+'/aboutus.html');
     res.sendFile(staticPath + '/aboutus.html');
-});
+ });
 
 
 
-app.get("/flights", function (req, res) {
+app.get("/flights",function(req,res){
+    // res.sendFile(staticPath+'/flights_available.html');
     res.sendFile(staticPath + '/flights_available.html');
-});
+ });
 
 
-app.get("/register", function (req, res) {
+app.get("/register",function(req,res){
+    // res.sendFile(staticPath+'/account.html');
     res.sendFile(staticPath + '/account.html');
-});
+
+ });
 
 //  this page will only be available if user is authenticated ///
-app.get("/adminpage", validateToken, function (req, res) {
-    res.sendFile(staticPath + '/admin.html');
-});
+app.get("/adminpage", validateToken ,function(req,res){
+    // res.sendFile(staticPath+'/admin.html');
+
+    res.render(viewPath + "/admin");
+    // ********************************
+ });
 
 //  this page will only be available if user is authenticated ///
-app.get("/customerpage", validateToken, function (req, res) {
-    res.sendFile(staticPath + '/customer.html');
-});
+app.get("/customerpage", validateToken ,function(req,res){
+    // res.sendFile(staticPath+'/customer.html');
+    res.sendFile(staticPath +'/customer.html');
+ }); 
 
 //  this page will only be available if user is authenticated ///
-app.get("/bookingpage", validateToken, function (req, res) {
+app.get("/bookingpage", validateToken ,function(req,res){
+    // res.sendFile(staticPath+'/booking.html');
     res.sendFile(staticPath + '/booking.html');
-});
+
+ }); 
 
 
 ///////////////////////////////////////// admin sign in///////////////////////////////////////
@@ -166,12 +177,12 @@ app.get("/", function (req, res) {
         if (error) {
           console.error('Error executing query:', error);
           console.log(results);
-          res.render(viewPath, { flights: [] }); // Pass an empty array if an error occurs
+          res.render(viewPath + "/index", { flights: [] }); // Pass an empty array if an error occurs
           return;
         }
         console.log("result")
         console.log(results);
-        res.render(viewPath, { flights: results }); // Pass the results to the EJS template for rendering
+        res.render(viewPath + "/index", { flights: results }); // Pass the results to the EJS template for rendering
       }
     );
   });
@@ -272,75 +283,170 @@ app.post("/customerLogin", function (req, res) {
     });
 });
 
-
 // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // ////////////////// admin and customer  logout route  //////////////////////
 
 app.post('/logout', (req, res) => {
-    res.clearCookie('access-token');
-    res.redirect('/'); // Redirect to the home page
+  res.clearCookie('access-token');
+  res.redirect('/'); // Redirect to the home page
 });
 
 
 
 // admin page :   creating new flights ////////////////////////////
 
-app.post("/createFlight", function (req, res) {
+app.post("/createFlight",function(req,res){
     //getting data from form//
-    var flightID = req.body.flightID;
-    var source = req.body.source;
-    var Destination = req.body.Destination;
-    var Date = req.body.Date;
-    var AirplaneName = req.body.AirplaneName;
-    var Terminal = req.body.Terminal;
-    var Status = req.body.Status;
-    var Departure = req.body.Departure;
-    var Arrival = req.body.Arrival;
-    var flightClass = req.body.flightClass;
-    var TotalSeats = req.body.TotalSeats;
-    var Price = req.body.Price;
-    var Discount = req.body.Discount;
-
-    console.log(flightID, source, Destination, Date, AirplaneName, Terminal, Status, Departure, Arrival, flightClass, TotalSeats, Price, Discount);
+    var flightID=req.body.flightID;
+    var source=req.body.source;
+    var Destination=req.body.Destination;
+    var Date=req.body.Date;
+    var AirplaneName=req.body.AirplaneName;
+    var Terminal=req.body.Terminal;
+    
+    var Departure=req.body.Departure;
+    var Arrival=req.body.Arrival;
+    
+    var BTotalSeats=req.body.BTotalSeats;
+    var BPrice=req.body.BPrice;
+    var BDiscount=req.body.BDiscount;
 
 
-    var sql = "INSERT INTO flight VALUES('" + flightID + "','" + source + "','" + Destination + "','" + Date + "','" + Departure + "','" + Arrival + "','" + AirplaneName + "','" + Status + "','" + Terminal + "',(SELECT Admin_id FROM admin));INSERT INTO class VALUES('" + flightID + "','" + flightClass + "','" + TotalSeats + "','" + TotalSeats + "','" + Price + "','" + Discount + "')";
+    var ETotalSeats=req.body.ETotalSeats;
+    var EPrice=req.body.EPrice;
+    var EDiscount=req.body.EDiscount;
+    
+    
+    var sql = "INSERT INTO flight VALUES('"+flightID+"',LOWER('"+source+"'),LOWER('"+Destination+"'),'"+Date+"','"+Departure+"','"+Arrival+"','"+AirplaneName+"','available','"+Terminal+"',(SELECT Admin_id FROM admin));INSERT INTO class VALUES('"+flightID+"','Business','"+BTotalSeats+"','"+BTotalSeats+"','"+BPrice+"','"+BDiscount+"');INSERT INTO class VALUES('"+flightID+"','Economy','"+ETotalSeats+"','"+ETotalSeats+"','"+EPrice+"','"+EDiscount+"')";
     // 
     // inserting form data into database //
-    connection.query(sql, function (error, results, fields) {
+    connection.query(sql,function(error,results, fields){
         if (error) {
             console.log(error);
-            res.redirect('/register');
+            var error= 'sorry please insert again';
+            res.render(viewPath+"/message",{display:error});
         }
-        else {
-            res.redirect('/adminpage');
-
-
+        else{
+                // var success='congrats new flight created';
+                // res.render("message",{display:success});
+                res.redirect(viewPath + '/admincrudoperations');
+                 
+                
         }
-
+       
+    });
+        
     });
 
+
+
+//  ADMIN PAGE : CRUD OPERATIONS 
+//  see all flights
+app.get('/admincrudoperations',function(req,res){
+    var sql = "select f.flight_id,f.source,f.destination,f.date, f.departure_time, f.arrival_time,f.airplane_name,f.status,f.terminal,c.class,c.total_seats,c.seats_left,c.price,c.discount from flight f , class c where f.flight_id=c.flight_id";
+    connection.query(sql,function(error,result){
+        if (error) {
+            console.log(error);
+            var error= 'sorry please provide valid info ';
+            res.render("message",{display:error});
+        }
+        else{
+            res.render(viewPath+"/admincrudoperations",{flights:result});
+                 
+                
+        }
+       
+    });
 });
 
+//  admin :delete flight
+app.get('/delete-flight',function(req,res){
+    var id = req.query.id;
+    var sql = "update flight set status='cancelled' where flight_id='"+id+"'; delete from class where flight_id='"+id+"'";
+    
+    connection.query(sql,function(error,result){
+        if (error) {
+            console.log(error);
+            var error= 'sorry please try again';
+            res.render(viewPath + "/message",{display:error});
+        }
+        else{
+            res.redirect(viewPath + '/admincrudoperations');
+                 
+                
+        }
+       
+    });
+}); 
+
+// ################ admin : update flight
+app.get('/updateflight',function(req,res){
+    var sql="select f.flight_id,f.source,f.destination,f.date, f.departure_time, f.arrival_time,f.airplane_name,f.status,f.terminal,c.class,c.total_seats,c.seats_left,c.price,c.discount from flight f , class c where f.flight_id=c.flight_id";
+    var id = req.query.id;
+    
+    
+    connection.query(sql,[id],function(error,result){
+        if (error) {
+            console.log(error);
+            var error= 'sorry please try again';
+            res.render(viewPath + "/message",{display:error});
+        }
+        else{
+            res.render(viewPath + "/updateflight",{flights:result});
+                 
+                
+        }
+       
+    });
+}); 
 
 
 
+app.post("/updateflight",function(req,res){
+    //getting data from form//
+    var flightID=req.body.flight_id;
+    var Date=req.body.Date;
+    var AirplaneName=req.body.AirplaneName; 
+    var status=req.body.status;
+    var Terminal=req.body.Terminal; 
+    var Departure=req.body.Departure;
+    var Arrival=req.body.Arrival;
+    var BPrice=req.body.BPrice;
+    var BDiscount=req.body.BDiscount;
+    var EPrice=req.body.EPrice;
+    var EDiscount=req.body.EDiscount;
+    
+    
+    var sql="UPDATE flight set date=?,airplane_name=?, status=? , terminal=? ,departure_time=? , arrival_time=? where flight_id=? ; UPDATE class set price=? ,discount=? where flight_id=? AND class='Business'; UPDATE class set price=? ,discount=? where flight_id=? AND class='Economy' ";
+    
+    
+    // inserting form data into database //
+    connection.query(sql,[Date,AirplaneName,status,Terminal,Departure,Arrival,flightID,BPrice,BDiscount,flightID,EPrice,EDiscount,flightID],function(error){
+        if (error) {
+            console.log(error);
+            var error= 'sorry please insert again';
+            res.render(viewPath + "/message",{display:error});
+        }
+        else{
+            res.redirect(viewPath + '/admincrudoperations')
+        }
+        
+    });
+        
+    });
 
+// ***********************************
 
-
-
-
-
-connection.connect(function (err) {
-    if (err)
-        throw (err);
+connection.connect(function(err){
+    if(err)
+         throw(err);
     console.log("connection successfull....");
 });
 
 
 
-app.listen(3000, function () {
+app.listen(3000, function(){
     console.log("server started on port 3000")
 
 });
