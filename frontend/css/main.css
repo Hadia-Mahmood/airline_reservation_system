@@ -335,7 +335,9 @@ h3 {
   border-radius: 10px;
   border: none;
   width: 100%;
+  font-family: var(--secondary-font);
   height: 100%;
+  padding-left: 5%;
   background-color: transparent;
 }
 
@@ -362,16 +364,25 @@ h3 {
 }
 
 .button-submit {
-  margin: 20px 0 10px 0;
-  background-color: #151717;
+  margin: 20px auto 3px;
+  background-color: #ffffff;
   border: none;
-  color: white;
+  color: rgb(48, 48, 48);
   font-size: 2rem;
   font-weight: 500;
+  border-radius: 55px !important;
   border-radius: 10px;
   height: 50px;
-  width: 100%;
+  width: 40%;
   cursor: pointer;
+  transition: 0.5s;
+}
+
+.button-submit:hover{
+  background-color: #4a4a4a;
+  color: rgb(255, 255, 255);
+
+  
 }
 
 .p {
