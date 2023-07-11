@@ -31,7 +31,7 @@ body {
 /* Navbar */
 
 .container-fluid-1 {
-  padding: 3% 9%;
+  padding: 3% 9%; 
   height: 100vh;
   width: 100%;
   background-image: url(../images/sky1.jpg);
@@ -44,8 +44,8 @@ body {
 
 .navbar {
   opacity: 0.8;
-  background-color: rgb(58, 117, 166) !important;
-  padding: 1rem 6rem;
+  background-color: rgb(20, 42, 61) !important;
+  padding: 0rem 12rem;
 }
 
 .navbar-scrolled {
@@ -54,7 +54,7 @@ body {
 }
 .navbar-brand {
   font-family: var(--primary-font);
-  font-size: 4rem;
+  font-size: 3.2rem;
   font-weight: bold;
   color: #f3fbfb;
 }
@@ -75,7 +75,7 @@ h3 {
 #header .navbar-nav .nav-link {
   font-family: var(--secondary-font);
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 600;
   padding: 0.5rem 3rem;
   margin: 0 0.2rem;
@@ -86,15 +86,19 @@ h3 {
 #header .navbar-nav .nav-item:hover .nav-link,
 #header .navbar-nav .nav-item .active {
   transform: scale(1.2);
-  color: aqua;
+  color: rgba(58, 117, 166, 0.7) !important;
 }
 
 .dropdown-menu {
-  padding: 8%;
+  margin-right: 55% !important;
+  position: static;
   background-color: #152238;
 }
 
+
+
 .dropdown-item {
+
   text-align: center;
   font-family: var(--secondary-font);
   text-transform: uppercase;
@@ -269,6 +273,19 @@ h3 {
 
 /* SIGN IN MODAL */
 
+.modal-title{
+  margin: auto;
+  text-align: center;
+  font-size: 4rem !important;
+  font-weight: bold;
+  /* color: #f3fbfb; */
+  text-decoration:#adffff;
+  padding: 3rem 0;
+  font-family: var(--secondary-font);
+  color: rgb(255, 255, 255) !important;
+}
+
+
 #account-form {
   margin: auto;
 }
@@ -278,7 +295,10 @@ h3 {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
+  border:1px solid #ffffff;
+
+  background-color: transparent;
   padding: 30px;
   width: 550px;
   border-radius: 20px;
@@ -296,7 +316,7 @@ h3 {
 }
 
 .flex-column > label {
-  color: #151717;
+  color: #ffffff;
   font-weight: 600;
 }
 
@@ -316,6 +336,7 @@ h3 {
   border: none;
   width: 100%;
   height: 100%;
+  background-color: transparent;
 }
 
 .input-3:focus {
@@ -336,7 +357,7 @@ h3 {
 
 .flex-row > div > label {
   font-size: 150%;
-  color: black;
+  color: rgb(255, 255, 255);
   font-weight: 400;
 }
 
@@ -381,7 +402,7 @@ h3 {
 }
 
 .modal-content {
-  width: 140%;
+  width: 120%;
 }
 
 .modal-content-1 {

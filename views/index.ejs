@@ -37,7 +37,7 @@
       req.onreadystatechange = function () {
         if (req.readyState == 4 && req.status == 200) {
           if (req.responseText == 'error') {
-            error.innerText = 'wrong email or password'
+            error.innerText = "ID - Password didn't match"
             // alert("Id pass dont match")
           }
           else if (req.responseText == 'success') {
@@ -140,7 +140,7 @@
   </section>
 
 
-
+  <%  const capitalizeFirstLetter = string => `${string.charAt(0).toUpperCase()}${string.slice(1)}`; %>
 
   <section id="trending-flights">
     <div class="trending-flights">
@@ -157,12 +157,12 @@
                         class="card-img-top" alt="Sample Image">
                       <div class="card-body text-center">
                         <span class="flight-id">Flight ID: <%= flights[i].flight_id %></span>
-                        <span class="to">To: <%= flights[i].destination %></span>
+                        <span class="to">To: <%=capitalizeFirstLetter(flights[i].destination) %></span>
                         <span class="date">Date: <%= formattedDate %></span>
                         <span class="time">Time: <%= flights[i].departure_time %></span>
                         <a href="#" class="btn btn-primary btn-outline-dark">Book Now</a>
                         <div class="price">
-                          <span class="discount-price">$<%= flights[i].discount %></span>
+                          <span class="discount-price">$<%= (flights[i].price) - ((flights[i].price*flights[i].discount)/100) %></span>
                           <span class="original-price">$<%= flights[i].price %></span>
                         </div>
                       </div>
@@ -180,7 +180,7 @@
     <!-- Remove the container if you want to extend the Footer to full width. -->
     <div class="my-5" style="margin-bottom:0 !important; margin: auto;">
 
-      <footer class="text-white text-center text-lg-start" style="background-color: rgba(58, 117, 166, 1) !important;">
+      <footer class="text-white text-center text-lg-start" style="background-color: rgb(20, 42, 61) !important;">
         <!-- Grid container -->
         <div class="container p-4" style="align-items: center; margin: auto;">
           <!--Grid row-->
@@ -257,15 +257,15 @@
 
 
   <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
-    tabindex="-1">
+    tabindex="-1" style="border-radius: 55px !important;">
     <div class="modal-dialog">
       <div class="modal-content modal-content-1">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Modal 1</h1>
+        <!-- <div class="modal-header">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <section id="account-form">
+        </div> -->
+        <div class="modal-body" style="background-color: rgba(58, 117, 166, 0.7) !important; padding: 3rem 3rem;">
+          <section id="account-form" >
+            <h1 class="modal-title fs-5" id="exampleModalToggleLabel">SIGN IN AS ADMIN</h1>
 
 
             <!-- //////////////////                    ADMIN SIGN IN                      ////////////////////////////// -->
@@ -323,26 +323,21 @@
             </form>
           </section>
         </div>
-        <div class="modal-footer">
+        <!-- <div class="modal-footer">
           <button class="btn-2 btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">SIGN IN AS
             USER</button>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
   <!-- /////////////////                  CUSTOMER SIGN  IN                ////////////////////////////////// -->
-  <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+  <div class="modal fade" id="exampleModalToggle2" aria-hidden="false" aria-labelledby="exampleModalToggleLabel2"
     tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 2</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
+        <div class="modal-body"  style="background-color: rgba(58, 117, 166, 0.7) !important; padding: 3rem 3rem;">
           <section id="account-form">
-
-
+            <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Sign In As USER</h1>
             <!-- change start -->
             <!-- <form class="form" action="/customerLogin" method="post"> -->
             <form class="form" onsubmit="return userLogin()">
@@ -398,10 +393,10 @@
             </form>
           </section>
         </div>
-        <div class="modal-footer">
+        <!-- <div class="modal-footer">
           <button class="btn-2 btn-primary btn-outline-dark" data-bs-target="#exampleModalToggle"
             data-bs-toggle="modal">Sign in as Admin</button>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
