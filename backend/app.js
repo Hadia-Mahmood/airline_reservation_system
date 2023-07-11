@@ -74,6 +74,8 @@ app.get("/adminpage", validateToken ,function(req,res){
     // ********************************
  });
 
+ 
+
 //  this page will only be available if user is authenticated ///
 app.get("/customerpage", validateToken ,function(req,res){
     // res.sendFile(staticPath+'/customer.html');
@@ -325,7 +327,7 @@ app.post("/createFlight",function(req,res){
         if (error) {
             console.log(error);
             var error= 'sorry please insert again';
-            res.render(viewPath+"/message",{display:error});
+            res.render(viewPath +"/message",{display:error});
         }
         else{
                 // var success='congrats new flight created';
@@ -349,7 +351,7 @@ app.get('/admincrudoperations',function(req,res){
         if (error) {
             console.log(error);
             var error= 'sorry please provide valid info ';
-            res.render("message",{display:error});
+            res.render(viewPath + "/message",{display:error});
         }
         else{
             res.render(viewPath+"/admincrudoperations",{flights:result});
@@ -384,7 +386,6 @@ app.get('/delete-flight',function(req,res){
 app.get('/updateflight',function(req,res){
     var sql="select f.flight_id,f.source,f.destination,f.date, f.departure_time, f.arrival_time,f.airplane_name,f.status,f.terminal,c.class,c.total_seats,c.seats_left,c.price,c.discount from flight f , class c where f.flight_id=c.flight_id";
     var id = req.query.id;
-    
     
     connection.query(sql,[id],function(error,result){
         if (error) {
